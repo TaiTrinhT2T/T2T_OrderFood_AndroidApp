@@ -3,6 +3,7 @@ package com.example.dell.dathangan.Utils;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -42,6 +43,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by DELL on 09/11/2017.
@@ -367,11 +370,12 @@ public class BaseHttp {
      * FragmentAccount_GetAllUsers
      * TODO: Lấy danh sách account
      */
-    public static void FragmentHistory_GetAll(final Context context, final ListView listView){
+    public static void FragmentHistory_GetAll(final Context context, final ListView listView,String idAccount){
         // Get URL All Users
         String urlHistory = BaseAPI.API_HISTORY_GET_ALL;
         HttpUrl.Builder urlBuilder = HttpUrl.parse(urlHistory).newBuilder();
-        urlBuilder.addQueryParameter("taiKhoan", "admin");
+
+        urlBuilder.addQueryParameter("idAccount", idAccount);
         String url = urlBuilder.build().toString();
         connectHttp(context, listView, url, BaseBundle.MODEL_HISTORY);
     }

@@ -81,17 +81,18 @@
                         android:textColor="@android:color/background_light"
                         android:textSize="10sp"
                         />
+
                     <TextView
-                        android:gravity="center"
-                        android:layout_marginTop="5dp"
                         android:id="@+id/txt_number_item_to_cart"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
+                        android:gravity="center"
                         android:padding="5dp"
                         android:text="0"
                         android:textAlignment="center"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/btn_dang_ky"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 

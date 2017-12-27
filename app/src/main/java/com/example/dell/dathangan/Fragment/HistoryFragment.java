@@ -1,5 +1,6 @@
 package com.example.dell.dathangan.Fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.dell.dathangan.R;
+import com.example.dell.dathangan.Utils.BaseBundle;
 import com.example.dell.dathangan.Utils.BaseHttp;
 
 /**
@@ -28,7 +30,11 @@ public class HistoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
         listView = (ListView) view.findViewById(R.id.lv_fm_history);
         // TODO: Connect API và đổ Data vào ListView
-        BaseHttp.FragmentHistory_GetAll(getContext(), listView);
+        SharedPreferences share = getActivity().getSharedPreferences(BaseBundle.SHARE_PREFERRENCES_LOGIN, getContext().MODE_PRIVATE);
+        //Lấy chuỗi String trong file SharedPreferences thông qua tên
+        String _id = share.getString(BaseBundle.SHARE_PREFERRENCES_LOGIN_ID, "");
+
+        BaseHttp.FragmentHistory_GetAll(getContext(), listView, _id);
         return view;
     }
 

@@ -16,6 +16,7 @@ import com.example.dell.dathangan.R;
 import com.example.dell.dathangan.Utils.BaseBundle;
 import com.example.dell.dathangan.Utils.BaseImagePreprocessing;
 import com.example.dell.dathangan.Utils.MySQLite;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -73,8 +74,11 @@ public class DetailOrderFragment extends Fragment {
         proPriceItemDetail.setText(proPriceItemOrder);
         desItemDetail.setText(desItemOrder);
         // TODO: Lấy ID của Ảnh theo tên lưu trong mipmap
-        int imageId = BaseImagePreprocessing.getMipmapResIdByName(getContext(), iconItemOrder);
-        iconItemDeatil.setImageResource(imageId);
+//        int imageId = BaseImagePreprocessing.getMipmapResIdByName(getContext(), iconItemOrder);
+//        iconItemDeatil.setImageResource(imageId);
+
+        String urlImage = dish.SrcImg;
+        Picasso.with(getContext()).load(urlImage).into(iconItemDeatil);
 
         final String finalIconItemOrder = iconItemOrder;
         final String finalNameItemOrder = nameItemOrder;
@@ -93,8 +97,11 @@ public class DetailOrderFragment extends Fragment {
                 Button btnDecrease = (Button) mView.findViewById(R.id.btn_sub_number_item_to_cart);
                 Button btnClose = (Button) mView.findViewById(R.id.btn_close_item_to_cart);
 
-                int imageId = BaseImagePreprocessing.getMipmapResIdByName(getContext(), dish.SrcImg);
-                imgItem.setImageResource(imageId);
+//                int imageId = BaseImagePreprocessing.getMipmapResIdByName(getContext(), dish.SrcImg);
+//                imgItem.setImageResource(imageId);
+                String urlImage = dish.SrcImg;
+                Picasso.with(getContext()).load(urlImage).into(imgItem);
+
                 nameItemAddToCart.setText(dish.TenMonAn);
                 proPriceItemAddToCart.setText(dish.GiaKhuyenMai);
 

@@ -19,6 +19,7 @@ import com.example.dell.dathangan.Utils.BaseFragmentTransaction;
 import com.example.dell.dathangan.Utils.BaseImagePreprocessing;
 import com.example.dell.dathangan.Utils.BaseViewHolder;
 import com.example.dell.dathangan.Utils.MySQLite;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,8 +93,11 @@ public class CartAdapter extends BaseAdapter {
         holder.txtCartProPrice.setText(cart.getGiaKhuyenMai());
         holder.txtCartNumberItem.setText(""+cart.getNumberItem());
         // TODO: Lấy ID của Ảnh theo tên lưu trong mipmap
-        int imageId = BaseImagePreprocessing.getMipmapResIdByName(context, cart.getSrcImg());
-        holder.imgCartIcon.setImageResource(imageId);
+//        int imageId = BaseImagePreprocessing.getMipmapResIdByName(context, cart.getSrcImg());
+//        holder.imgCartIcon.setImageResource(imageId);
+
+        String urlImage = cart.getSrcImg();
+        Picasso.with(context).load(urlImage).into(holder.imgCartIcon);
 
         holder.btnCartDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,8 +127,11 @@ public class CartAdapter extends BaseAdapter {
                 Button btnClose = (Button) mView.findViewById(R.id.btn_close_item_to_cart);
                 TextView _txtNumber = (TextView) mView.findViewById(R.id.txt_number_item_to_cart);
 
-                int imageId = BaseImagePreprocessing.getMipmapResIdByName(context, cart.getSrcImg());
-                imgItem.setImageResource(imageId);
+//                int imageId = BaseImagePreprocessing.getMipmapResIdByName(context, cart.getSrcImg());
+//                imgItem.setImageResource(imageId);
+                String urlImage = cart.getSrcImg();
+                Picasso.with(context).load(urlImage).into(imgItem);
+
                 nameItemAddToCart.setText(cart.getTenMonAn());
                 proPriceItemAddToCart.setText(cart.getGiaKhuyenMai());
                 _txtNumber.setText(cart.getNumberItem()+"");

@@ -167,8 +167,10 @@ public class CustomListDishAdapter extends BaseAdapter {
                 Button btnDecrease = (Button) mView.findViewById(R.id.btn_sub_number_item_to_cart);
                 Button btnClose = (Button) mView.findViewById(R.id.btn_close_item_to_cart);
 
-                int imageId = BaseImagePreprocessing.getMipmapResIdByName(context, dish.SrcImg);
-                imgItem.setImageResource(imageId);
+//                int imageId = BaseImagePreprocessing.getMipmapResIdByName(context, dish.SrcImg);
+//                imgItem.setImageResource(imageId);
+                String urlImage = dish.SrcImg;
+                Picasso.with(context).load(urlImage).into(imgItem);
                 nameItemAddToCart.setText(dish.TenMonAn);
                 proPriceItemAddToCart.setText(dish.GiaKhuyenMai);
 

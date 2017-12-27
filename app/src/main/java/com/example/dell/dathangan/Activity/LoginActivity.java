@@ -247,8 +247,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             progressDialog.show();
 
             Map<String, String> jsonParams = new HashMap<String, String>();
-            jsonParams.put("Name", email);
-            jsonParams.put("Password", password);
+            jsonParams.put("email", email);
+            jsonParams.put("matKhau", password);
             JsonObjectRequest postRequest = new JsonObjectRequest( Request.Method.POST, BaseAPI.API_LOGIN_CHECK_ACCOUNT_POST,
                     new JSONObject(jsonParams),
                     new Response.Listener<JSONObject>() {
