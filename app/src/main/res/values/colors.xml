@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#263dc7</color>-->
+    <!--<color name="colorPrimaryDark">#303f9f</color>-->
+    <color name="colorPrimary">#32b846</color>
+    <color name="colorPrimaryDark">#289e39</color>
+    <!--<color name="colorPrimary">#ff2e00</color>-->
+    <!--<color name="colorPrimaryDark">#ff2e10</color>-->
+    <color name="colorAccent">#FF4081</color>
+    <color name="gray">#01333333</color>
+    <color name="white">#ffffff</color>
+    <color name="btn_dang_nhap">#e7ab01</color>
+    <color name="btn_dang_ky">#dc1618</color>
+    <color name="colorTextPrimary">#dc1618</color>
+    <color name="black">#1c1c1b</color>
+    <color name="colorBackGroundPrimary">#BFEFFF</color>
+
+    <color name="colorBG_2">#32b846</color>
+    <color name="colorBG_3">#289e39</color>
+    <color name="colorBG_1">#e1e6eb</color>
+    <color name="colorText_1">#9c958f</color>
+    <color name="colorText_2">#e22222</color>
+
+</resources>
